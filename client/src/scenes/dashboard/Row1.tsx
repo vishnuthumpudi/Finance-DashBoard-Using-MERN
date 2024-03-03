@@ -119,7 +119,7 @@ const Row1 = () => {
               style={{ fontSize: "10px" }}
               domain={[8000, 23000]}
             />
-            <Tooltip/>
+            <Tooltip />
             <Area
               type="monotone"
               dataKey="revenue"
@@ -134,7 +134,8 @@ const Row1 = () => {
               dot={true}
               stroke={palette.primary.main}
               fillOpacity={1}
-              fill="url(#colorExpenses)"/>
+              fill="url(#colorExpenses)"
+              />
           </AreaChart>
         </ResponsiveContainer>
       </DashboardBox>
