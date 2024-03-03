@@ -15,8 +15,10 @@ import {
   Legend,
   Line,
   Tooltip,
-  Area,
-} from "recharts";
+  Area
+} from 'recharts';
+
+// import Tooltip from "@mui/material";
 
 const Row1 = () => {
   const { palette } = useTheme();
@@ -125,15 +127,14 @@ const Row1 = () => {
               stroke={palette.primary.main}
               fillOpacity={1}
               fill="url(#colorRevenue)"
-            />
+              />
             <Area
               type="monotone"
               dataKey="expenses"
               dot={true}
               stroke={palette.primary.main}
               fillOpacity={1}
-              fill="url(#colorExpenses)"
-            />
+              fill="url(#colorExpenses)"/>
           </AreaChart>
         </ResponsiveContainer>
       </DashboardBox>
