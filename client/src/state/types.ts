@@ -1,29 +1,57 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import {
-  GetKpisResponse,
-  GetProductsResponse,
-  GetTransactionsResponse,
-} from "./types";
+export interface ExpensesByCategory {
+  salaries: number;
+  supplies: number;
+  services: number;
+}
 
-export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_BASE_URL }),
-  reducerPath: "main",
-  tagTypes: ["Kpis", "Products", "Transactions"],
-  endpoints: (build) => ({
-    getKpis: build.query<Array<GetKpisResponse>, void>({
-      query: () => "kpi/kpis/",
-      providesTags: ["Kpis"],
-    }),
-    getProducts: build.query<Array<GetProductsResponse>, void>({
-      query: () => "product/products/",
-      providesTags: ["Products"],
-    }),
-    getTransactions: build.query<Array<GetTransactionsResponse>, void>({
-      query: () => "transaction/transactions/",
-      providesTags: ["Transactions"],
-    }),
-  }),
-});
+export interface Month {
+  id: string;
+  month: string;
+  revenue: number;
+  expenses: number;
+  nonOperationalExpenses: number;
+  operationalExpenses: number;
+}
 
-export const { useGetKpisQuery, useGetProductsQuery, useGetTransactionsQuery } =
-  api;
+export interface Day {
+  id: string;
+  date: string;
+  revenue: number;
+  expenses: number;
+}
+
+export interface GetKpisResponse {
+  id: string;
+  _id: string;
+  __v: number;
+  totalProfit: number;
+  totalRevenue: number;
+  totalExpenses: number;
+  expensesByCategory: ExpensesByCategory;
+  monthlyData: Array<Month>;
+  dailyData: Array<Day>;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface GetProductsResponse {
+  id: string;
+  _id: string;
+  __v: number;
+  price: number;
+  expense: number;
+  transactions: Array<string>;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface GetTransactionsResponse {
+  id: string;
+  _id: string;
+  __v: number;
+  buyer: string;
+  amount: number;
+  productIds: Array<string>;
+  createdAt: string;
+  updatedAt: string;
+}

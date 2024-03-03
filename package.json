@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "recharts": "^2.12.2"
+  }
+}
