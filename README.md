@@ -22,7 +22,7 @@ To get started with the Finance Dashboard Using MERN project, follow these steps
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/finance-dashboard-mern.git
+git clone https://github.com/vishnuthumpudi/Finance-DashBoard-Using-MERN.git
 ```
 
 ### Installation and Configuration
